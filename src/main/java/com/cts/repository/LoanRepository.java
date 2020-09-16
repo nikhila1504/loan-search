@@ -8,9 +8,9 @@ import com.cts.bean.Loan;
 
 public interface LoanRepository extends CrudRepository<Loan,Long>{
 	
-Optional<Loan> findByLoanNumber(Long loanNumber);
-Optional<Loan> findByFirstName(String firstName);
-Optional<Loan> findByLastName(String lastName);
+Loan findByLoanNumber(Long loanNumber);
+Loan findByFirstName(String firstName);
+Loan findByLastName(String lastName);
 
 
 

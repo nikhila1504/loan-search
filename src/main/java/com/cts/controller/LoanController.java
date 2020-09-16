@@ -26,16 +26,16 @@ public class LoanController {
 
 	
 	@GetMapping(value = "/num/{loanNumber}")
-	Optional<Loan> getLoanByLoanNumber(@PathVariable Long loanNumber) {
+	Loan getLoanByLoanNumber(@PathVariable Long loanNumber) {
 		return service.getLoanByLoanNumber(loanNumber);
 	}
 	
 	@GetMapping(value = "/name/{firstName}")
-	Optional<Loan> getLoanByFirstName(@PathVariable String firstName) {
+	Loan getLoanByFirstName(@PathVariable String firstName) {
 		return service.getLoanByFirstName(firstName);
 	}
 	@GetMapping(value = "/get/{lastName}")
-	Optional<Loan> getLoanByLastName(@PathVariable String lastName) {
+	Loan getLoanByLastName(@PathVariable String lastName) {
 		return service.getLoanByLastName(lastName);
 	}
 

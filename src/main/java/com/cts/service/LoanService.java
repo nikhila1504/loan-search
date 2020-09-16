@@ -18,16 +18,16 @@ public class LoanService {
 	Logger logger = LoggerFactory.getLogger(LoanService.class);
 
 	
-	public Optional<Loan> getLoanByLoanNumber(Long loanNumber) {
+	public Loan getLoanByLoanNumber(Long loanNumber) {
 		return repo.findByLoanNumber(loanNumber);
 	}
 
 	
-	public Optional<Loan> getLoanByFirstName(String firstName) {
+	public Loan getLoanByFirstName(String firstName) {
 		return repo.findByFirstName(firstName);
 	}
 	
-	public Optional<Loan> getLoanByLastName(String lastName) {
+	public Loan getLoanByLastName(String lastName) {
 		return repo.findByLastName(lastName);
 	}
 

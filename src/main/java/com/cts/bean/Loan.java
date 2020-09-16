@@ -1,4 +1,5 @@
 package com.cts.bean;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Loan {
 	    private String contactNo;
 	    private String status;
 	    @JsonFormat(pattern = "yyyy-MM-dd")
-	    private Date originalDate;
+	    private LocalDate originalDate;
 	    private String legalDocuments;
 		public long getLoanNumber() {
 			return loanNumber;
@@ -66,10 +67,10 @@ public class Loan {
 		public void setStatus(String status) {
 			this.status = status;
 		}
-		public Date getOriginalDate() {
+		public LocalDate getOriginalDate() {
 			return originalDate;
 		}
-		public void setOriginalDate(Date originalDate) {
+		public void setOriginalDate(LocalDate originalDate) {
 			this.originalDate = originalDate;
 		}
 		public String getLegalDocuments() {
@@ -79,7 +80,7 @@ public class Loan {
 			this.legalDocuments = legalDocuments;
 		}
 		public Loan(long loanNumber, long loanAmount, int loanTerm, String firstName, String lastName, String contactNo,
-				String status, Date originalDate, String legalDocuments) {
+				String status, LocalDate localDate, String legalDocuments) {
 			super();
 			this.loanNumber = loanNumber;
 			this.loanAmount = loanAmount;
@@ -88,7 +89,7 @@ public class Loan {
 			this.lastName = lastName;
 			this.contactNo = contactNo;
 			this.status = status;
-			this.originalDate = originalDate;
+			this.originalDate = localDate;
 			this.legalDocuments = legalDocuments;
 		}
 		public Loan() {
