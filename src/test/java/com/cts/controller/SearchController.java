@@ -42,7 +42,7 @@ public class SearchController {
 
 		mockMvc.perform(request).andExpect(status().isOk())
 				.andExpect(content()
-				.json("[{\"loanNumber\":\"101\",\"loanAmount\":\"500000\",\"loanTerm\":\"5\",\"firstName\":\"nikhila\",\"lastName\":\"damaraju\",\"contactNo\":\"8272828873\",\"status\":\"active\",\"dob\":\"05/05/2019\",\"legalDocuments\":\"site documents\"}]"))
+						.json("[{\"loanNumber\":\"101\",\"loanAmount\":\"500000\",\"loanTerm\":\"5\",\"firstName\":\"nikhila\",\"lastName\":\"damaraju\",\"contactNo\":\"8272828873\",\"status\":\"active\",\"dob\":\"05/05/2019\",\"legalDocuments\":\"site documents\"}]"))
 				.andReturn();
 	}
 
