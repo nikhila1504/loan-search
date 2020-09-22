@@ -1,6 +1,5 @@
 package com.cts.service;
 
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,17 +17,23 @@ public class LoanService {
 	Logger logger = LoggerFactory.getLogger(LoanService.class);
 
 	
-	public Loan getLoanByLoanNumber(Long loanNumber) {
-		return repo.findByLoanNumber(loanNumber);
+	public Loan getLoanByLoanNumber(int loanNumber) {
+		Loan loan=new Loan();
+		loan= repo.findByLoanNumber(loanNumber);
+		return loan;
 	}
 
 	
 	public Loan getLoanByFirstName(String firstName) {
-		return repo.findByFirstName(firstName);
+		Loan loan1=new Loan();
+		loan1= repo.findByFirstName(firstName);
+		return loan1;
 	}
 	
 	public Loan getLoanByLastName(String lastName) {
-		return repo.findByLastName(lastName);
+		Loan loan2=new Loan();
+		loan2= repo.findByLastName(lastName);
+		return loan2;
 	}
 
 

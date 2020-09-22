@@ -4,6 +4,8 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,17 +28,17 @@ public class LoanController {
 
 	
 	@GetMapping(value = "/num/{loanNumber}")
-	Loan getLoanByLoanNumber(@PathVariable Long loanNumber) {
-		return service.getLoanByLoanNumber(loanNumber);
+	public ResponseEntity<Loan> getLoanByLoanNumber(@PathVariable int loanNumber) {
+		return new ResponseEntity<>(service.getLoanByLoanNumber(loanNumber),HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/name/{firstName}")
-	Loan getLoanByFirstName(@PathVariable String firstName) {
-		return service.getLoanByFirstName(firstName);
+	public ResponseEntity<Loan>  getLoanByFirstName(@PathVariable String firstName) {
+		return new ResponseEntity<>(service.getLoanByFirstName(firstName),HttpStatus.OK);
 	}
 	@GetMapping(value = "/get/{lastName}")
-	Loan getLoanByLastName(@PathVariable String lastName) {
-		return service.getLoanByLastName(lastName);
+	public ResponseEntity<Loan> getLoanByLastName(@PathVariable String lastName) {
+		return new ResponseEntity<>(service.getLoanByLastName(lastName),HttpStatus.OK);
 	}
 
 }
